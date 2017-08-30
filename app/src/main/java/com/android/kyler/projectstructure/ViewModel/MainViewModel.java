@@ -2,11 +2,9 @@ package com.android.kyler.projectstructure.ViewModel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.ViewModel;
 
 import com.android.kyler.projectstructure.Models.Users;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,7 +31,13 @@ public class MainViewModel extends AndroidViewModel {
         return users;
     }
 
-    public void addUser(Users user){
+    public void addUser(String username, String email){
+        users.add(new Users(username, email));
+    }
+
+    public void addUser(){
+        int size = users.size();
+        Users user = new Users(String.valueOf(size),String.valueOf(size+"@gmail.com"));
         users.add(user);
     }
 

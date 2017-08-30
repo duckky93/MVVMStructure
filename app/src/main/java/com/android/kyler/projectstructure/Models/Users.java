@@ -10,11 +10,20 @@ public class Users extends BaseObservable{
     String userName;
     String userEmail;
     boolean isActived;
+    int seekbarValue;
+
+    public Users(String userName, String userEmail) {
+        this.userName = userName;
+        this.userEmail = userEmail;
+        this.isActived = false;
+        this.seekbarValue = 0;
+    }
 
     public Users(String userName, String userEmail, boolean isActived) {
         this.userName = userName;
         this.userEmail = userEmail;
         this.isActived = isActived;
+        this.seekbarValue = 0;
     }
 
     public String getUserName() {
@@ -39,5 +48,13 @@ public class Users extends BaseObservable{
 
     public void setActived(boolean actived) {
         isActived = actived;
+    }
+
+    public int getSeekbarValue() {
+        return seekbarValue;
+    }
+
+    public void setSeekbarValue(int seekbarValue) {
+        this.seekbarValue = seekbarValue;
     }
 }
